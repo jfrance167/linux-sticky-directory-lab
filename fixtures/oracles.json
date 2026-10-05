@@ -1,0 +1,877 @@
+[
+  {
+    "request": {
+      "id": "ordinary_zero_content",
+      "version": 1,
+      "profile": "sticky_unlink_v1",
+      "operation": "unlink_regular",
+      "subject": {
+        "fsuid": 202
+      },
+      "parent": {
+        "owner_uid": 101,
+        "declared_access_bits": 3,
+        "sticky": false
+      },
+      "target": {
+        "owner_uid": 303,
+        "kind": "regular",
+        "content_bits": 0
+      },
+      "context": {
+        "identity_mapping": "assumed_identity",
+        "parent_permission_source": "declared_ordinary_bits",
+        "ancestor_search": "assumed_satisfied",
+        "privilege": "ordinary_no_capabilities",
+        "entry_state": "assumed_existing",
+        "excluded_features": []
+      }
+    },
+    "expected": {
+      "status": "model_complete",
+      "complete": true,
+      "reason": "normalized_unlink_predicates_only",
+      "actual_unlink": "unverified",
+      "entry_removed": "unverified",
+      "storage_reclaimed": "unverified",
+      "assumptions": [
+        "invented_filesystem_ids",
+        "identity_mapping_assumed",
+        "declared_parent_access",
+        "declared_context_only"
+      ],
+      "not_verified": [
+        "actual_unlink",
+        "entry_removed",
+        "storage_reclaimed",
+        "input_truth",
+        "parent_access_selection",
+        "ancestor_search",
+        "full_system_policy"
+      ],
+      "id": "ordinary_zero_content",
+      "model_permits_unlink": true,
+      "parent_access_bits": 3,
+      "target_content_bits": 0,
+      "target_content_bits_consulted": false,
+      "sticky_required": false,
+      "ownership_relation": "neither",
+      "sticky_basis": "not_required",
+      "predicates": {
+        "parent_write": true,
+        "parent_search": true,
+        "sticky_ownership": true
+      },
+      "denial_reasons": []
+    }
+  },
+  {
+    "request": {
+      "id": "ordinary_all_content",
+      "version": 1,
+      "profile": "sticky_unlink_v1",
+      "operation": "unlink_regular",
+      "subject": {
+        "fsuid": 202
+      },
+      "parent": {
+        "owner_uid": 101,
+        "declared_access_bits": 3,
+        "sticky": false
+      },
+      "target": {
+        "owner_uid": 303,
+        "kind": "regular",
+        "content_bits": 7
+      },
+      "context": {
+        "identity_mapping": "assumed_identity",
+        "parent_permission_source": "declared_ordinary_bits",
+        "ancestor_search": "assumed_satisfied",
+        "privilege": "ordinary_no_capabilities",
+        "entry_state": "assumed_existing",
+        "excluded_features": []
+      }
+    },
+    "expected": {
+      "status": "model_complete",
+      "complete": true,
+      "reason": "normalized_unlink_predicates_only",
+      "actual_unlink": "unverified",
+      "entry_removed": "unverified",
+      "storage_reclaimed": "unverified",
+      "assumptions": [
+        "invented_filesystem_ids",
+        "identity_mapping_assumed",
+        "declared_parent_access",
+        "declared_context_only"
+      ],
+      "not_verified": [
+        "actual_unlink",
+        "entry_removed",
+        "storage_reclaimed",
+        "input_truth",
+        "parent_access_selection",
+        "ancestor_search",
+        "full_system_policy"
+      ],
+      "id": "ordinary_all_content",
+      "model_permits_unlink": true,
+      "parent_access_bits": 3,
+      "target_content_bits": 7,
+      "target_content_bits_consulted": false,
+      "sticky_required": false,
+      "ownership_relation": "neither",
+      "sticky_basis": "not_required",
+      "predicates": {
+        "parent_write": true,
+        "parent_search": true,
+        "sticky_ownership": true
+      },
+      "denial_reasons": []
+    }
+  },
+  {
+    "request": {
+      "id": "sticky_unrelated",
+      "version": 1,
+      "profile": "sticky_unlink_v1",
+      "operation": "unlink_regular",
+      "subject": {
+        "fsuid": 202
+      },
+      "parent": {
+        "owner_uid": 101,
+        "declared_access_bits": 3,
+        "sticky": true
+      },
+      "target": {
+        "owner_uid": 303,
+        "kind": "regular",
+        "content_bits": 7
+      },
+      "context": {
+        "identity_mapping": "assumed_identity",
+        "parent_permission_source": "declared_ordinary_bits",
+        "ancestor_search": "assumed_satisfied",
+        "privilege": "ordinary_no_capabilities",
+        "entry_state": "assumed_existing",
+        "excluded_features": []
+      }
+    },
+    "expected": {
+      "status": "model_complete",
+      "complete": true,
+      "reason": "normalized_unlink_predicates_only",
+      "actual_unlink": "unverified",
+      "entry_removed": "unverified",
+      "storage_reclaimed": "unverified",
+      "assumptions": [
+        "invented_filesystem_ids",
+        "identity_mapping_assumed",
+        "declared_parent_access",
+        "declared_context_only"
+      ],
+      "not_verified": [
+        "actual_unlink",
+        "entry_removed",
+        "storage_reclaimed",
+        "input_truth",
+        "parent_access_selection",
+        "ancestor_search",
+        "full_system_policy"
+      ],
+      "id": "sticky_unrelated",
+      "model_permits_unlink": false,
+      "parent_access_bits": 3,
+      "target_content_bits": 7,
+      "target_content_bits_consulted": false,
+      "sticky_required": true,
+      "ownership_relation": "neither",
+      "sticky_basis": "neither",
+      "predicates": {
+        "parent_write": true,
+        "parent_search": true,
+        "sticky_ownership": false
+      },
+      "denial_reasons": [
+        "sticky_ownership"
+      ]
+    }
+  },
+  {
+    "request": {
+      "id": "parent_owner",
+      "version": 1,
+      "profile": "sticky_unlink_v1",
+      "operation": "unlink_regular",
+      "subject": {
+        "fsuid": 101
+      },
+      "parent": {
+        "owner_uid": 101,
+        "declared_access_bits": 3,
+        "sticky": true
+      },
+      "target": {
+        "owner_uid": 303,
+        "kind": "regular",
+        "content_bits": 0
+      },
+      "context": {
+        "identity_mapping": "assumed_identity",
+        "parent_permission_source": "declared_ordinary_bits",
+        "ancestor_search": "assumed_satisfied",
+        "privilege": "ordinary_no_capabilities",
+        "entry_state": "assumed_existing",
+        "excluded_features": []
+      }
+    },
+    "expected": {
+      "status": "model_complete",
+      "complete": true,
+      "reason": "normalized_unlink_predicates_only",
+      "actual_unlink": "unverified",
+      "entry_removed": "unverified",
+      "storage_reclaimed": "unverified",
+      "assumptions": [
+        "invented_filesystem_ids",
+        "identity_mapping_assumed",
+        "declared_parent_access",
+        "declared_context_only"
+      ],
+      "not_verified": [
+        "actual_unlink",
+        "entry_removed",
+        "storage_reclaimed",
+        "input_truth",
+        "parent_access_selection",
+        "ancestor_search",
+        "full_system_policy"
+      ],
+      "id": "parent_owner",
+      "model_permits_unlink": true,
+      "parent_access_bits": 3,
+      "target_content_bits": 0,
+      "target_content_bits_consulted": false,
+      "sticky_required": true,
+      "ownership_relation": "parent",
+      "sticky_basis": "parent",
+      "predicates": {
+        "parent_write": true,
+        "parent_search": true,
+        "sticky_ownership": true
+      },
+      "denial_reasons": []
+    }
+  },
+  {
+    "request": {
+      "id": "target_owner",
+      "version": 1,
+      "profile": "sticky_unlink_v1",
+      "operation": "unlink_regular",
+      "subject": {
+        "fsuid": 303
+      },
+      "parent": {
+        "owner_uid": 101,
+        "declared_access_bits": 3,
+        "sticky": true
+      },
+      "target": {
+        "owner_uid": 303,
+        "kind": "regular",
+        "content_bits": 0
+      },
+      "context": {
+        "identity_mapping": "assumed_identity",
+        "parent_permission_source": "declared_ordinary_bits",
+        "ancestor_search": "assumed_satisfied",
+        "privilege": "ordinary_no_capabilities",
+        "entry_state": "assumed_existing",
+        "excluded_features": []
+      }
+    },
+    "expected": {
+      "status": "model_complete",
+      "complete": true,
+      "reason": "normalized_unlink_predicates_only",
+      "actual_unlink": "unverified",
+      "entry_removed": "unverified",
+      "storage_reclaimed": "unverified",
+      "assumptions": [
+        "invented_filesystem_ids",
+        "identity_mapping_assumed",
+        "declared_parent_access",
+        "declared_context_only"
+      ],
+      "not_verified": [
+        "actual_unlink",
+        "entry_removed",
+        "storage_reclaimed",
+        "input_truth",
+        "parent_access_selection",
+        "ancestor_search",
+        "full_system_policy"
+      ],
+      "id": "target_owner",
+      "model_permits_unlink": true,
+      "parent_access_bits": 3,
+      "target_content_bits": 0,
+      "target_content_bits_consulted": false,
+      "sticky_required": true,
+      "ownership_relation": "target",
+      "sticky_basis": "target",
+      "predicates": {
+        "parent_write": true,
+        "parent_search": true,
+        "sticky_ownership": true
+      },
+      "denial_reasons": []
+    }
+  },
+  {
+    "request": {
+      "id": "both_owners",
+      "version": 1,
+      "profile": "sticky_unlink_v1",
+      "operation": "unlink_regular",
+      "subject": {
+        "fsuid": 303
+      },
+      "parent": {
+        "owner_uid": 303,
+        "declared_access_bits": 3,
+        "sticky": true
+      },
+      "target": {
+        "owner_uid": 303,
+        "kind": "regular",
+        "content_bits": 0
+      },
+      "context": {
+        "identity_mapping": "assumed_identity",
+        "parent_permission_source": "declared_ordinary_bits",
+        "ancestor_search": "assumed_satisfied",
+        "privilege": "ordinary_no_capabilities",
+        "entry_state": "assumed_existing",
+        "excluded_features": []
+      }
+    },
+    "expected": {
+      "status": "model_complete",
+      "complete": true,
+      "reason": "normalized_unlink_predicates_only",
+      "actual_unlink": "unverified",
+      "entry_removed": "unverified",
+      "storage_reclaimed": "unverified",
+      "assumptions": [
+        "invented_filesystem_ids",
+        "identity_mapping_assumed",
+        "declared_parent_access",
+        "declared_context_only"
+      ],
+      "not_verified": [
+        "actual_unlink",
+        "entry_removed",
+        "storage_reclaimed",
+        "input_truth",
+        "parent_access_selection",
+        "ancestor_search",
+        "full_system_policy"
+      ],
+      "id": "both_owners",
+      "model_permits_unlink": true,
+      "parent_access_bits": 3,
+      "target_content_bits": 0,
+      "target_content_bits_consulted": false,
+      "sticky_required": true,
+      "ownership_relation": "both",
+      "sticky_basis": "both",
+      "predicates": {
+        "parent_write": true,
+        "parent_search": true,
+        "sticky_ownership": true
+      },
+      "denial_reasons": []
+    }
+  },
+  {
+    "request": {
+      "id": "owner_missing_write",
+      "version": 1,
+      "profile": "sticky_unlink_v1",
+      "operation": "unlink_regular",
+      "subject": {
+        "fsuid": 101
+      },
+      "parent": {
+        "owner_uid": 101,
+        "declared_access_bits": 1,
+        "sticky": true
+      },
+      "target": {
+        "owner_uid": 303,
+        "kind": "regular",
+        "content_bits": 7
+      },
+      "context": {
+        "identity_mapping": "assumed_identity",
+        "parent_permission_source": "declared_ordinary_bits",
+        "ancestor_search": "assumed_satisfied",
+        "privilege": "ordinary_no_capabilities",
+        "entry_state": "assumed_existing",
+        "excluded_features": []
+      }
+    },
+    "expected": {
+      "status": "model_complete",
+      "complete": true,
+      "reason": "normalized_unlink_predicates_only",
+      "actual_unlink": "unverified",
+      "entry_removed": "unverified",
+      "storage_reclaimed": "unverified",
+      "assumptions": [
+        "invented_filesystem_ids",
+        "identity_mapping_assumed",
+        "declared_parent_access",
+        "declared_context_only"
+      ],
+      "not_verified": [
+        "actual_unlink",
+        "entry_removed",
+        "storage_reclaimed",
+        "input_truth",
+        "parent_access_selection",
+        "ancestor_search",
+        "full_system_policy"
+      ],
+      "id": "owner_missing_write",
+      "model_permits_unlink": false,
+      "parent_access_bits": 1,
+      "target_content_bits": 7,
+      "target_content_bits_consulted": false,
+      "sticky_required": true,
+      "ownership_relation": "parent",
+      "sticky_basis": "parent",
+      "predicates": {
+        "parent_write": false,
+        "parent_search": true,
+        "sticky_ownership": true
+      },
+      "denial_reasons": [
+        "parent_write"
+      ]
+    }
+  },
+  {
+    "request": {
+      "id": "owner_missing_search",
+      "version": 1,
+      "profile": "sticky_unlink_v1",
+      "operation": "unlink_regular",
+      "subject": {
+        "fsuid": 303
+      },
+      "parent": {
+        "owner_uid": 101,
+        "declared_access_bits": 2,
+        "sticky": true
+      },
+      "target": {
+        "owner_uid": 303,
+        "kind": "regular",
+        "content_bits": 7
+      },
+      "context": {
+        "identity_mapping": "assumed_identity",
+        "parent_permission_source": "declared_ordinary_bits",
+        "ancestor_search": "assumed_satisfied",
+        "privilege": "ordinary_no_capabilities",
+        "entry_state": "assumed_existing",
+        "excluded_features": []
+      }
+    },
+    "expected": {
+      "status": "model_complete",
+      "complete": true,
+      "reason": "normalized_unlink_predicates_only",
+      "actual_unlink": "unverified",
+      "entry_removed": "unverified",
+      "storage_reclaimed": "unverified",
+      "assumptions": [
+        "invented_filesystem_ids",
+        "identity_mapping_assumed",
+        "declared_parent_access",
+        "declared_context_only"
+      ],
+      "not_verified": [
+        "actual_unlink",
+        "entry_removed",
+        "storage_reclaimed",
+        "input_truth",
+        "parent_access_selection",
+        "ancestor_search",
+        "full_system_policy"
+      ],
+      "id": "owner_missing_search",
+      "model_permits_unlink": false,
+      "parent_access_bits": 2,
+      "target_content_bits": 7,
+      "target_content_bits_consulted": false,
+      "sticky_required": true,
+      "ownership_relation": "target",
+      "sticky_basis": "target",
+      "predicates": {
+        "parent_write": true,
+        "parent_search": false,
+        "sticky_ownership": true
+      },
+      "denial_reasons": [
+        "parent_search"
+      ]
+    }
+  },
+  {
+    "request": {
+      "id": "read_alone",
+      "version": 1,
+      "profile": "sticky_unlink_v1",
+      "operation": "unlink_regular",
+      "subject": {
+        "fsuid": 202
+      },
+      "parent": {
+        "owner_uid": 101,
+        "declared_access_bits": 4,
+        "sticky": false
+      },
+      "target": {
+        "owner_uid": 303,
+        "kind": "regular",
+        "content_bits": 7
+      },
+      "context": {
+        "identity_mapping": "assumed_identity",
+        "parent_permission_source": "declared_ordinary_bits",
+        "ancestor_search": "assumed_satisfied",
+        "privilege": "ordinary_no_capabilities",
+        "entry_state": "assumed_existing",
+        "excluded_features": []
+      }
+    },
+    "expected": {
+      "status": "model_complete",
+      "complete": true,
+      "reason": "normalized_unlink_predicates_only",
+      "actual_unlink": "unverified",
+      "entry_removed": "unverified",
+      "storage_reclaimed": "unverified",
+      "assumptions": [
+        "invented_filesystem_ids",
+        "identity_mapping_assumed",
+        "declared_parent_access",
+        "declared_context_only"
+      ],
+      "not_verified": [
+        "actual_unlink",
+        "entry_removed",
+        "storage_reclaimed",
+        "input_truth",
+        "parent_access_selection",
+        "ancestor_search",
+        "full_system_policy"
+      ],
+      "id": "read_alone",
+      "model_permits_unlink": false,
+      "parent_access_bits": 4,
+      "target_content_bits": 7,
+      "target_content_bits_consulted": false,
+      "sticky_required": false,
+      "ownership_relation": "neither",
+      "sticky_basis": "not_required",
+      "predicates": {
+        "parent_write": false,
+        "parent_search": false,
+        "sticky_ownership": true
+      },
+      "denial_reasons": [
+        "parent_write",
+        "parent_search"
+      ]
+    }
+  },
+  {
+    "request": {
+      "id": "no_parent_bits",
+      "version": 1,
+      "profile": "sticky_unlink_v1",
+      "operation": "unlink_regular",
+      "subject": {
+        "fsuid": 202
+      },
+      "parent": {
+        "owner_uid": 101,
+        "declared_access_bits": 0,
+        "sticky": false
+      },
+      "target": {
+        "owner_uid": 303,
+        "kind": "regular",
+        "content_bits": 7
+      },
+      "context": {
+        "identity_mapping": "assumed_identity",
+        "parent_permission_source": "declared_ordinary_bits",
+        "ancestor_search": "assumed_satisfied",
+        "privilege": "ordinary_no_capabilities",
+        "entry_state": "assumed_existing",
+        "excluded_features": []
+      }
+    },
+    "expected": {
+      "status": "model_complete",
+      "complete": true,
+      "reason": "normalized_unlink_predicates_only",
+      "actual_unlink": "unverified",
+      "entry_removed": "unverified",
+      "storage_reclaimed": "unverified",
+      "assumptions": [
+        "invented_filesystem_ids",
+        "identity_mapping_assumed",
+        "declared_parent_access",
+        "declared_context_only"
+      ],
+      "not_verified": [
+        "actual_unlink",
+        "entry_removed",
+        "storage_reclaimed",
+        "input_truth",
+        "parent_access_selection",
+        "ancestor_search",
+        "full_system_policy"
+      ],
+      "id": "no_parent_bits",
+      "model_permits_unlink": false,
+      "parent_access_bits": 0,
+      "target_content_bits": 7,
+      "target_content_bits_consulted": false,
+      "sticky_required": false,
+      "ownership_relation": "neither",
+      "sticky_basis": "not_required",
+      "predicates": {
+        "parent_write": false,
+        "parent_search": false,
+        "sticky_ownership": true
+      },
+      "denial_reasons": [
+        "parent_write",
+        "parent_search"
+      ]
+    }
+  },
+  {
+    "request": {
+      "id": "full_bits_sticky_unrelated",
+      "version": 1,
+      "profile": "sticky_unlink_v1",
+      "operation": "unlink_regular",
+      "subject": {
+        "fsuid": 202
+      },
+      "parent": {
+        "owner_uid": 101,
+        "declared_access_bits": 7,
+        "sticky": true
+      },
+      "target": {
+        "owner_uid": 303,
+        "kind": "regular",
+        "content_bits": 7
+      },
+      "context": {
+        "identity_mapping": "assumed_identity",
+        "parent_permission_source": "declared_ordinary_bits",
+        "ancestor_search": "assumed_satisfied",
+        "privilege": "ordinary_no_capabilities",
+        "entry_state": "assumed_existing",
+        "excluded_features": []
+      }
+    },
+    "expected": {
+      "status": "model_complete",
+      "complete": true,
+      "reason": "normalized_unlink_predicates_only",
+      "actual_unlink": "unverified",
+      "entry_removed": "unverified",
+      "storage_reclaimed": "unverified",
+      "assumptions": [
+        "invented_filesystem_ids",
+        "identity_mapping_assumed",
+        "declared_parent_access",
+        "declared_context_only"
+      ],
+      "not_verified": [
+        "actual_unlink",
+        "entry_removed",
+        "storage_reclaimed",
+        "input_truth",
+        "parent_access_selection",
+        "ancestor_search",
+        "full_system_policy"
+      ],
+      "id": "full_bits_sticky_unrelated",
+      "model_permits_unlink": false,
+      "parent_access_bits": 7,
+      "target_content_bits": 7,
+      "target_content_bits_consulted": false,
+      "sticky_required": true,
+      "ownership_relation": "neither",
+      "sticky_basis": "neither",
+      "predicates": {
+        "parent_write": true,
+        "parent_search": true,
+        "sticky_ownership": false
+      },
+      "denial_reasons": [
+        "sticky_ownership"
+      ]
+    }
+  },
+  {
+    "request": {
+      "id": "full_bits_owner_zero_content",
+      "version": 1,
+      "profile": "sticky_unlink_v1",
+      "operation": "unlink_regular",
+      "subject": {
+        "fsuid": 101
+      },
+      "parent": {
+        "owner_uid": 101,
+        "declared_access_bits": 7,
+        "sticky": true
+      },
+      "target": {
+        "owner_uid": 303,
+        "kind": "regular",
+        "content_bits": 0
+      },
+      "context": {
+        "identity_mapping": "assumed_identity",
+        "parent_permission_source": "declared_ordinary_bits",
+        "ancestor_search": "assumed_satisfied",
+        "privilege": "ordinary_no_capabilities",
+        "entry_state": "assumed_existing",
+        "excluded_features": []
+      }
+    },
+    "expected": {
+      "status": "model_complete",
+      "complete": true,
+      "reason": "normalized_unlink_predicates_only",
+      "actual_unlink": "unverified",
+      "entry_removed": "unverified",
+      "storage_reclaimed": "unverified",
+      "assumptions": [
+        "invented_filesystem_ids",
+        "identity_mapping_assumed",
+        "declared_parent_access",
+        "declared_context_only"
+      ],
+      "not_verified": [
+        "actual_unlink",
+        "entry_removed",
+        "storage_reclaimed",
+        "input_truth",
+        "parent_access_selection",
+        "ancestor_search",
+        "full_system_policy"
+      ],
+      "id": "full_bits_owner_zero_content",
+      "model_permits_unlink": true,
+      "parent_access_bits": 7,
+      "target_content_bits": 0,
+      "target_content_bits_consulted": false,
+      "sticky_required": true,
+      "ownership_relation": "parent",
+      "sticky_basis": "parent",
+      "predicates": {
+        "parent_write": true,
+        "parent_search": true,
+        "sticky_ownership": true
+      },
+      "denial_reasons": []
+    }
+  },
+  {
+    "request": {
+      "id": "read_search_missing_write",
+      "version": 1,
+      "profile": "sticky_unlink_v1",
+      "operation": "unlink_regular",
+      "subject": {
+        "fsuid": 202
+      },
+      "parent": {
+        "owner_uid": 101,
+        "declared_access_bits": 5,
+        "sticky": false
+      },
+      "target": {
+        "owner_uid": 303,
+        "kind": "regular",
+        "content_bits": 7
+      },
+      "context": {
+        "identity_mapping": "assumed_identity",
+        "parent_permission_source": "declared_ordinary_bits",
+        "ancestor_search": "assumed_satisfied",
+        "privilege": "ordinary_no_capabilities",
+        "entry_state": "assumed_existing",
+        "excluded_features": []
+      }
+    },
+    "expected": {
+      "status": "model_complete",
+      "complete": true,
+      "reason": "normalized_unlink_predicates_only",
+      "actual_unlink": "unverified",
+      "entry_removed": "unverified",
+      "storage_reclaimed": "unverified",
+      "assumptions": [
+        "invented_filesystem_ids",
+        "identity_mapping_assumed",
+        "declared_parent_access",
+        "declared_context_only"
+      ],
+      "not_verified": [
+        "actual_unlink",
+        "entry_removed",
+        "storage_reclaimed",
+        "input_truth",
+        "parent_access_selection",
+        "ancestor_search",
+        "full_system_policy"
+      ],
+      "id": "read_search_missing_write",
+      "model_permits_unlink": false,
+      "parent_access_bits": 5,
+      "target_content_bits": 7,
+      "target_content_bits_consulted": false,
+      "sticky_required": false,
+      "ownership_relation": "neither",
+      "sticky_basis": "not_required",
+      "predicates": {
+        "parent_write": false,
+        "parent_search": true,
+        "sticky_ownership": true
+      },
+      "denial_reasons": [
+        "parent_write"
+      ]
+    }
+  }
+]
+

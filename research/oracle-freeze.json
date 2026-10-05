@@ -1,0 +1,14 @@
+{
+  "phase": "frozen_before_application_code",
+  "application_files": [],
+  "full_reports": 13,
+  "property_domain": {
+    "parent_bits": 8,
+    "sticky": 2,
+    "parent_owner_match": 2,
+    "target_owner_match": 2,
+    "content_bits": 8,
+    "total": 512
+  },
+  "oracle_sha256": "a3ca0f81377d652662c71fc61a692f052e43420c41620b1335c89d65f47f6f3b"
+}
